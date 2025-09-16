@@ -20,6 +20,10 @@ export type LoginApi = {
     expires_in_seconds: string;
 }
 
+export type UploadImageApi = {
+    image: string;
+}
+
 export type UserModel = {
     id: number;
     name: string;

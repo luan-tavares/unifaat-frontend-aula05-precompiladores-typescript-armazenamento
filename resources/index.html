@@ -29,10 +29,10 @@
     
 
     <div class="container mt-4">
-      <div class="d-flex">
+      <div class="d-flex ">
        
         <!-- Form à esquerda -->
-        <section id="add-todos" class="me-4" style="max-width: 350px;flex-basis: 300px; flex-shrink: 0;">
+        <section id="add-todos" class="me-4 d-flex flex-column gap-3" style="max-width: 350px;flex-basis: 300px; flex-shrink: 0;">
           <img id="squirtle" src="./img/squirtle.png" alt="">
           <button class="btn btn-secondary w-100">Nova Tarefa</button>
 
@@ -55,11 +55,22 @@
 
             <div id="add-errors" class="alert alert-danger mt-3 d-none"></div>
           </form>
+
+          <div>
+            <label for="photo" class="form-label fw-semibold">Upload imagem</label>
+            <input class="form-control" type="file" id="photo" accept="image/*">
+            <div class="form-text">PNG, JPG, WEBP — até 5 MB</div>
+          
+            <div id="file-info" class="small text-muted mt-2 d-none"></div>
+            <div id="preview-wrap" class="mt-3 d-none">
+              <img id="preview" class="img-fluid img-thumbnail" alt="Pré-visualização">
+            </div>
+          </div>
            
         </section>
 
         <!-- Lista à direita -->
-        <section class="d-flex flex-grow-1 gap-2 flex-column">
+        <section class="d-flex flex-grow-1 gap-2 flex-column align-items-center">
           <form id="form-login" style="width: 400px;">
             <div class="mb-3">
               <label for="email" class="form-label">E-mail</label>
@@ -77,10 +88,10 @@
               <button class="btn btn-primary" type="submit">Entrar</button>
             </div>
           </form>
-          <div id="todos">
+          <div id="todos" class="w-100">
             <!-- itens vão entrar aqui -->
           </div>
-          <ul id="pagination" class="pagination"></ul>
+          <ul id="pagination" class="pagination w-100"></ul>
         </section>
       </div>
     </div>

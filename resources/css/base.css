@@ -48,3 +48,9 @@ img#squirtle {
     display: block;
     margin: auto;
 }
+
+#form-login {
+    padding: 20px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+}

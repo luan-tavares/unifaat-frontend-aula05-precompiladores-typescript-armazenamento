@@ -58,7 +58,6 @@ export default async (request, response) => {
 
         return response
             .json({
-                mensagem: 'Imagem enviada com sucesso!',
                 image: newName
             });
     });

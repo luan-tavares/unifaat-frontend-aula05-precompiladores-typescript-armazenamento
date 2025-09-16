@@ -1,5 +1,6 @@
 // Importa a função que faz a chamada para a API de listagem de todos
 import callTodosListApi from "./callTodosListApi";
+import inputUploadImageChange from "./listeners/inputUploadImageChange";
 
 // Importa a função que renderiza a paginação
 import renderPagination from "./renderPagination";
@@ -37,8 +38,13 @@ export default async function (currentPage = 0) {
     // Se houver erro na resposta, exibe mensagem e interrompe
     if ("error" in response) {
         todosDivElement.innerHTML = response.error;
+        (document.getElementById("add-todos") as HTMLElement).style.display = "none";
         return;
     }
+
+    (document.getElementById("photo") as HTMLInputElement).addEventListener("change", inputUploadImageChange);
+
+    (document.getElementById("add-todos") as HTMLElement).style.display = "block";
 
     const formLoginElement = document.getElementById("form-login") as HTMLFormElement | null;
 

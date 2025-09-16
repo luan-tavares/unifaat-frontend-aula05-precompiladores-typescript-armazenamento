@@ -27,7 +27,7 @@ export default (function () {
     router.delete('/users/:id', DeleteController);
 
 
-    router.post('/users/photo', VerifyImage, UploadPhotoController);
+    router.post('/users/image', VerifyImage, UploadPhotoController);
 
     return router;
 
