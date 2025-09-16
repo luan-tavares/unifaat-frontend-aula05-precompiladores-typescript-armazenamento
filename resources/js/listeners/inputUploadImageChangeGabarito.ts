@@ -18,9 +18,23 @@ export default (() => {
             currentElement.value = '';
             return;
         }
-        /** CODAR AQUI */
+        // valida tamanho (opcional)
+        if (file.size > MAX) {
+            alert('Imagem maior que 5 MB.');
+            currentElement.value = '';
+            return;
+        }
 
-        // for data e chamar api
+        const formData = new FormData;
+        formData.append('image', file);       // campo "file" esperado no backend
+
+        const data = await callUploadPhotoApi(formData);
+
+        console.log(data);
+
+        // mostra nome/tamanho
+        info.textContent = `${file.name} — ${(file.size / 1024).toFixed(0)} KB`;
+        info.classList.remove('d-none');
 
         // preview
         const url = URL.createObjectURL(file);
